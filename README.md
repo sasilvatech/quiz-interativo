@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Quiz Interativo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo ao **Quiz Interativo**, um projeto desenvolvido para proporcionar uma experiência divertida e educativa através de quizzes interativos, com funcionalidades de ranking, integração com Firebase e um sistema de pontuação! 🏆
 
-## Available Scripts
+## 📌 Descrição
 
-In the project directory, you can run:
+O **Quiz Interativo** é um jogo de perguntas e respostas no estilo de quiz onde os usuários podem testar seus conhecimentos em várias áreas. O projeto é baseado em **React.js** para o frontend e integra-se com o **Firebase** para armazenar dados como as perguntas, respostas e pontuações. 
 
-### `npm start`
+Além disso, o projeto conta com funcionalidades como:
+- **Ranking de Pontuação** para os jogadores mais rápidos e certeiros.
+- **Persistência de Dados** com Firebase Firestore.
+- **Interface intuitiva** com animações e gifs interativos.
+- **Desafio de Desistir** com um botão de "desistir" e interação divertida para o usuário.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Funcionalidades
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Tela Inicial**: A primeira tela exibe um botão para iniciar o quiz, e um ranking das pontuações anteriores.
+- **Modo Quiz**: Ao iniciar o quiz, o usuário será desafiado com uma série de perguntas.
+- **Botão de Desistir**: Caso o jogador desista, um popup engraçado aparecerá, desafiando o jogador a continuar ou aceitar que ele desiste fácil.
+- **Ranking de Pontuação**: O jogador poderá ver suas melhores pontuações e compará-las com outras.
+- **Respostas em Tempo Real**: O quiz calcula a pontuação conforme o jogador responde às perguntas corretamente ou incorretamente.
 
-### `npm test`
+## 🔧 Tecnologias Usadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-### `npm run build`
+- **Frontend**: 
+  - React.js
+  - React Router Dom (para navegação)
+  - Firebase (para persistência de dados)
+  - CSS e animações para interação visual
+- **Backend**:
+  - Firebase Firestore (banco de dados)
+  - Firebase Authentication (para gerenciamento de usuários, se necessário)
+  
+## 📦 Como Rodar o Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Siga os passos abaixo para rodar o projeto localmente.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clonar o repositório
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/seu-usuario/quiz-interativo.git
+cd quiz-interativo
+```
 
-### `npm run eject`
+### 2. Instalar as dependências
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para instalar as dependências do projeto, execute o seguinte comando:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Configuração do Firebase
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Antes de rodar o projeto, você precisa configurar o Firebase. Siga os passos:
 
-## Learn More
+  - Acesse Firebase Console
+  - Crie um novo projeto e ative o Firestore
+  - Copie suas credenciais de configuração do Firebase e crie um arquivo .env na raiz do projeto, com as variáveis:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+REACT_APP_QUIZ_API_KEY=SuaAPIKey
+REACT_APP_QUIZ_AUTH_DOMAIN=SeuAuthDomain
+REACT_APP_QUIZ_PROJECT_ID=SeuProjectID
+REACT_APP_QUIZ_STORAGE_BUCKET=SeuStorageBucket
+REACT_APP_QUIZ_MESSAGING_SENDER_ID=SeuSenderID
+REACT_APP_QUIZ_APP_ID=SeuAppID
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 4. Rodar o Projeto
 
-### Code Splitting
+Após configurar as variáveis de ambiente, execute o seguinte comando para rodar a aplicação:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm start
+```
