@@ -1,0 +1,212 @@
+.container {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 42px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.quizContainer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progresso {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progressoBar {
+    height: 100%;
+    background: linear-gradient(90deg, #34ff00, #74f76d);
+    transition: width 0.5s ease;
+}
+
+.perguntaNumero {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pergunta {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 40px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.opcoes {
+    display: grid;
+    gap: 20px;
+}
+
+.opcao {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px 30px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.opcao:hover {
+    background: rgba(92, 255, 51, 0.3);
+    border-color: #34ff00;
+    transform: translateX(10px);
+}
+
+.botaoDesistirContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.botaoDesistir {
+    padding: 16px 32px;
+    background: linear-gradient(90deg, #FF3366, #FF6B6B);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.botaoDesistir:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 51, 102, 0.3);
+}
+
+
+.resultado {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resultado h2 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.pontuacao {
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 30px 0;
+}
+
+.pontuacao span {
+    color: #74f76d;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.botoes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.botaoReiniciar, .botaoVoltar {
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.botaoReiniciar {
+    background: linear-gradient(90deg, #FF3366, #FF6B6B);
+    color: white;
+    border: none;
+}
+
+.botaoReiniciar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 51, 102, 0.3);
+}
+
+.botaoVoltar {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.botaoVoltar:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 32px;
+    }
+
+    .quizContainer {
+        padding: 30px;
+    }
+
+    .pergunta {
+        font-size: 24px;
+    }
+
+    .opcao {
+        padding: 16px 24px;
+        font-size: 16px;
+    }
+
+    .resultado {
+        padding: 30px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .botaoReiniciar, .botaoVoltar {
+        width: 100%;
+    }
+}

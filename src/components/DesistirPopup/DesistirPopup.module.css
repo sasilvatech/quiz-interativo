@@ -1,61 +1,90 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.tenor-gif-embed {
+  margin-bottom: 20px;
+}
+
+.popup p {
+  font-size: 24px;
+  color: white;
+  margin: 30px 0;
+}
+
+.botoes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.vergonha,
+.continuar {
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.vergonha {
+  background: linear-gradient(90deg, #FF3366, #FF6B6B);
+  color: white;
+}
+
+.vergonha:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 51, 102, 0.3);
+}
+
+.continuar {
+  color: white;
+  background: linear-gradient(90deg, #34ff00, #74f76d);
+}
+
+.continuar:hover {
+  transform: scale(1.10);
+  box-shadow: 0 10px 20px rgba(52, 255, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+
   .popup {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 20px;
   }
-  
-  .popup img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .popup p {
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-  
-  .botoes {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .vergonha {
-    background-color: #d32f2f;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
+
+  .vergonha,
   .continuar {
-    background-color: #388e3c;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 10px 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
   }
-  
+}

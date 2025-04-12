@@ -1,0 +1,143 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(45deg, #FF3366 0%, #FF6B6B 100%);
+    border-radius: 24px;
+    padding: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(255, 51, 102, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 45px rgba(255, 51, 102, 0.3);
+}
+
+.titulo {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.card:hover .titulo {
+    transform: translateY(-200px);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 51, 102, 0.95) 0%, rgba(255, 107, 107, 0.95) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.iniciar {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.iniciar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background: white;
+    transition: width 0.4s ease;
+}
+
+.card:hover .iniciar {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card:hover .iniciar::after {
+    width: 100%;
+}
+
+/* Variações de cores para diferentes as categorias */
+/* JavaScript */
+.card[data-categoria="javascript"] {
+    background: linear-gradient(45deg, #F0DB4F 0%, #E5A228 100%);
+}
+
+.card[data-categoria="javascript"]:hover {
+    box-shadow: 0 25px 45px rgba(240, 219, 79, 0.3);
+}
+
+.card[data-categoria="javascript"] .overlay {
+    background: linear-gradient(135deg, rgba(240, 219, 79, 0.95) 0%, rgba(229, 162, 40, 0.95) 100%);
+}
+
+
+/* HTML */
+.card[data-categoria="html"] {
+    background: linear-gradient(45deg, #E44D26 0%, #F16529 100%);
+}
+
+.card[data-categoria="html"]:hover {
+    box-shadow: 0 25px 45px rgba(228, 77, 38, 0.3);
+}
+
+.card[data-categoria="html"] .overlay {
+    background: linear-gradient(135deg, rgba(228, 77, 38, 0.95) 0%, rgba(241, 101, 41, 0.95) 100%);
+}
+
+
+/* CSS */
+.card[data-categoria="css"] {
+    background: linear-gradient(45deg, #264DE4 0%, #2965F1 100%);
+}
+
+.card[data-categoria="css"]:hover {
+    box-shadow: 0 25px 45px rgba(41, 101, 241, 0.3);
+}
+
+.card[data-categoria="css"] .overlay {
+    background: linear-gradient(135deg, rgba(38, 77, 228, 0.95) 0%, rgba(41, 101, 241, 0.95) 100%);
+}
+
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

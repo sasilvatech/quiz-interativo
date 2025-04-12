@@ -1,0 +1,135 @@
+.container {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 48px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.rankingContainer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.rankingItem {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.rankingItem:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.posicao {
+    font-size: 24px;
+    font-weight: 800;
+    color: #FF3366;
+    margin-right: 20px;
+    min-width: 60px;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nome {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.pontos {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(90deg, #FF3366, #FF6B6B);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.botaoVoltar {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.botaoVoltar:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+/* Top 3 estilização especial */
+.rankingItem:nth-child(1) .posicao {
+    color: #FFD700;
+}
+
+.rankingItem:nth-child(2) .posicao {
+    color: #C0C0C0;
+}
+
+.rankingItem:nth-child(3) .posicao {
+    color: #CD7F32;
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 36px;
+    }
+
+    .rankingContainer {
+        padding: 20px;
+    }
+
+    .rankingItem {
+        padding: 15px;
+    }
+
+    .posicao {
+        font-size: 20px;
+        min-width: 40px;
+    }
+
+    .nome {
+        font-size: 18px;
+    }
+
+    .pontos {
+        font-size: 16px;
+    }
+}

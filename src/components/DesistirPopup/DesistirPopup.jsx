@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './DesistirPopup.module.css';
 
-function DesistirPopup({ onConfirmar, onCancelar }) {
+const DesistirPopup = ({ onConfirmar, onCancelar }) => {
     useEffect(() => {
         const script = document.createElement('script');
         script.src = 'https://tenor.com/embed.js';
@@ -23,16 +23,11 @@ function DesistirPopup({ onConfirmar, onCancelar }) {
                     data-aspect-ratio="1.77778"
                     data-width="100%"
                 ></div>
-                <script
-                    type="text/javascript"
-                    async
-                    src="https://tenor.com/embed.js"
-                ></script>
 
                 <p>Credo... você desiste fácil assim?</p>
                 <div className={styles.botoes}>
                     <button className={styles.vergonha} onClick={onConfirmar}>
-                        Sim, sou a vergonha da profissão
+                        Sou a vergonha da profissão
                     </button>
                     <button className={styles.continuar} onClick={onCancelar}>
                         Continuar
@@ -41,6 +36,6 @@ function DesistirPopup({ onConfirmar, onCancelar }) {
             </div>
         </div>
     );
-}
+};
 
 export default DesistirPopup;
