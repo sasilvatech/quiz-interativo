@@ -68,7 +68,7 @@
 .pontos {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.8);
-    background: linear-gradient(90deg, #FF3366, #FF6B6B);
+    background: linear-gradient(90deg, #6fff33ba, #6bffafb8);
     padding: 8px 16px;
     border-radius: 20px;
     font-weight: 600;
@@ -94,7 +94,7 @@
     transform: translateY(-2px);
 }
 
-/* Top 3 estilização especial */
+/* Estilzação para os TOP 3 */
 .rankingItem:nth-child(1) .posicao {
     color: #FFD700;
 }

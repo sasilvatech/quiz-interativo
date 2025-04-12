@@ -6,7 +6,8 @@ import perguntasJS from '../../data/perguntas/perguntasJS';
 import perguntasHTML from '../../data/perguntas/perguntasHTML';
 import perguntasCSS from '../../data/perguntas/perguntasCSS';
 
-import DesistirPopup from './../../components/DesistirPopup/DesistirPopup'; 
+import DesistirPopup from './../../components/DesistirPopup/DesistirPopup';
+import SalvarPontuacao from './../../components/SalvarPontuacao/SalvarPontuacao'
 
 export default function Quiz() {
     const { categoria } = useParams();
@@ -15,6 +16,7 @@ export default function Quiz() {
     const [pontuacao, setPontuacao] = useState(0);
     const [finalizado, setFinalizado] = useState(false);
     const [mostrarPopup, setMostrarPopup] = useState(false);
+    const [mostrarSalvar, setMostrarSalvar] = useState(false);
 
     let perguntas = [];
 
@@ -44,6 +46,7 @@ export default function Quiz() {
             setIndiceAtual(proximoIndice);
         } else {
             setFinalizado(true);
+            setMostrarSalvar(true);
         }
     };
 
@@ -53,6 +56,11 @@ export default function Quiz() {
 
     const cancelarDesistencia = () => {
         setMostrarPopup(false);
+    };
+
+    const handleSalvarPontuacao = async (dados) => {
+        console.log('Salvando pontuação:', dados);
+        navigate('/ranking');
     };
 
     return (
@@ -99,6 +107,7 @@ export default function Quiz() {
                                 setIndiceAtual(0);
                                 setPontuacao(0);
                                 setFinalizado(false);
+                                setMostrarSalvar(false);
                             }}
                         >
                             Tentar Novamente
@@ -110,6 +119,14 @@ export default function Quiz() {
                             Voltar para Home
                         </button>
                     </div>
+
+                    {mostrarSalvar && (
+                        <SalvarPontuacao
+                            pontuacao={pontuacao}
+                            totalPerguntas={perguntas.length}
+                            onSalvar={handleSalvarPontuacao}
+                        />
+                    )}
                 </div>
             )}
 

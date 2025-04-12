@@ -1,22 +1,27 @@
 import { useState } from 'react';
+import { db } from '../../services/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import styles from './SalvarPontuacao.module.css';
 
 export default function SalvarPontuacao({ pontuacao, totalPerguntas, onSalvar }) {
     const [nome, setNome] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (nome.trim()) {
+            // Salvar no Firestore
+            await addDoc(collection(db, 'ranking'), {
+                nome,
+                pontos: pontuacao,
+                criadoEm: serverTimestamp()
+            });
+
             onSalvar({ nome, pontos: pontuacao });
         }
     };
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.titulo}>Parabéns! 🎉</h2>
-            <p className={styles.pontuacao}>
-                Você fez <span>{pontuacao}</span> de {totalPerguntas} pontos
-            </p>
             <form onSubmit={handleSubmit} className={styles.form}>
                 <input
                     type="text"
